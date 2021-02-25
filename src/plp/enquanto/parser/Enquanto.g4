@@ -33,8 +33,8 @@ booleano: BOOLEANO                                       # bool
         | expressao '>' expressao                        # opRel //(maior)
         | 'nao' booleano                                 # naoLogico
         | booleano 'e' booleano                          # eLogico
-        | booleano 'ou' booleano                         # eLogico //(ou)
-        | booleano 'xou' booleano                        # eLogico //(xor)
+        | booleano 'ou' booleano                         # ouLogico //(ou)
+        | booleano 'xou' booleano                        # xouLogico //(xor)
         | '(' booleano ')'                               # boolPar
         ;
 

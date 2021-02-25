@@ -832,6 +832,23 @@ public class EnquantoParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	public static class XouLogicoContext extends BooleanoContext {
+		public List<BooleanoContext> booleano() {
+			return getRuleContexts(BooleanoContext.class);
+		}
+		public BooleanoContext booleano(int i) {
+			return getRuleContext(BooleanoContext.class,i);
+		}
+		public XouLogicoContext(BooleanoContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterXouLogico(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitXouLogico(this);
+		}
+	}
 	public static class BoolContext extends BooleanoContext {
 		public TerminalNode BOOLEANO() { return getToken(EnquantoParser.BOOLEANO, 0); }
 		public BoolContext(BooleanoContext ctx) { copyFrom(ctx); }
@@ -904,6 +921,23 @@ public class EnquantoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitBoolPar(this);
+		}
+	}
+	public static class OuLogicoContext extends BooleanoContext {
+		public List<BooleanoContext> booleano() {
+			return getRuleContexts(BooleanoContext.class);
+		}
+		public BooleanoContext booleano(int i) {
+			return getRuleContext(BooleanoContext.class,i);
+		}
+		public OuLogicoContext(BooleanoContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterOuLogico(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOuLogico(this);
 		}
 	}
 
@@ -1064,7 +1098,7 @@ public class EnquantoParser extends Parser {
 						break;
 					case 2:
 						{
-						_localctx = new ELogicoContext(new BooleanoContext(_parentctx, _parentState));
+						_localctx = new OuLogicoContext(new BooleanoContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_booleano);
 						setState(160);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
@@ -1076,7 +1110,7 @@ public class EnquantoParser extends Parser {
 						break;
 					case 3:
 						{
-						_localctx = new ELogicoContext(new BooleanoContext(_parentctx, _parentState));
+						_localctx = new XouLogicoContext(new BooleanoContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_booleano);
 						setState(163);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");

@@ -127,6 +127,22 @@ public class Regras extends EnquantoBaseListener {
 		valores.insira(ctx, new ELogico(esq, dir));
 	}
 
+	// Novo
+	@Override
+	public void exitOuLogico(OuLogicoContext ctx) {
+		final Bool esq = valores.pegue(ctx.booleano(0));
+		final Bool dir = valores.pegue(ctx.booleano(1));
+		valores.insira(ctx, new OuLogico(esq, dir));
+	}
+
+	// Novo
+	@Override
+	public void exitXouLogico(XouLogicoContext ctx) {
+		final Bool esq = valores.pegue(ctx.booleano(0));
+		final Bool dir = valores.pegue(ctx.booleano(1));
+		valores.insira(ctx, new XouLogico(esq, dir));
+	}
+
 	@Override
 	public void exitBoolPar(BoolParContext ctx) {
 		final Bool booleano = valores.pegue(ctx.booleano());
@@ -162,7 +178,7 @@ public class Regras extends EnquantoBaseListener {
 			case "="  : exp = new ExpIgual(esq, dir); break;
 			case "<=" : exp = new ExpMenorIgual(esq, dir); break;
 			// Novos
-			case "=>" : exp = new ExpMaiorIgual(esq, dir); break; 	//ok
+			case ">=" : exp = new ExpMaiorIgual(esq, dir); break; 	//ok
 			case "<>" : exp = new ExpDiferente(esq, dir); break;	//ok
 			case "<"  : exp = new ExpMenor(esq, dir); break;		//ok
 			case ">"  : exp = new ExpMaior(esq, dir); break;		//ok

@@ -234,13 +234,13 @@ interface Linguagem {
 
 	//Comando novo
 	class ExpExpo extends OpBin<Expressao> implements Expressao{
-		ExpDiv(Expressao esq, Expressao dir) {
+		ExpExpo(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
 
 		@Override
 		public int getValor() {
-			return Math.pow(esq.getValor(),  dir.getValor());
+			return (int) Math.pow(esq.getValor(),  dir.getValor());
 		}
 	}
 
@@ -287,7 +287,7 @@ interface Linguagem {
 
 		@Override
 		public boolean getValor() {
-			return esq.getValor() => dir.getValor();
+			return esq.getValor() >= dir.getValor();
 		}
 	}
 
@@ -346,6 +346,30 @@ interface Linguagem {
 		@Override
 		public boolean getValor() {
 			return esq.getValor() && dir.getValor();
+		}
+	}
+
+	//Novo
+	class OuLogico extends OpBin<Bool> implements Bool{
+		OuLogico(Bool esq, Bool dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() || dir.getValor();
+		}
+	}
+
+	//Novo 
+	class XouLogico extends OpBin<Bool> implements Bool{
+		XouLogico(Bool esq, Bool dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() ^ dir.getValor();
 		}
 	}
 }
