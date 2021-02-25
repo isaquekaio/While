@@ -22,8 +22,7 @@ public class EnquantoParser extends Parser {
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
 		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, T__30=31, 
 		T__31=32, T__32=33, T__33=34, T__34=35, T__35=36, T__36=37, T__37=38, 
-		T__38=39, T__39=40, BOOLEANO=41, INT=42, ID=43, TEXTO=44, Comentario=45, 
-		Espaco=46;
+		T__38=39, BOOLEANO=40, INT=41, ID=42, TEXTO=43, Comentario=44, Espaco=45;
 	public static final int
 		RULE_programa = 0, RULE_seqComando = 1, RULE_comando = 2, RULE_expressao = 3, 
 		RULE_booleano = 4, RULE_parametros = 5, RULE_funcao = 6;
@@ -38,11 +37,10 @@ public class EnquantoParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "';'", "','", "':='", "'skip'", "'se'", "'entao'", "'senaose'", 
-			"'ent\u00E3o'", "'senao'", "'enquanto'", "'faca'", "'para'", "'de'", 
-			"'ate'", "'passo'", "'escolha'", "'caso'", "':'", "'exiba'", "'escreva'", 
-			"'{'", "'}'", "'leia'", "'^'", "'*'", "'/'", "'+'", "'-'", "'('", "')'", 
-			"'='", "'<='", "'=>'", "'<>'", "'<'", "'>'", "'nao'", "'e'", "'ou'", 
-			"'xou'"
+			"'senao'", "'enquanto'", "'faca'", "'para'", "'de'", "'ate'", "'passo'", 
+			"'escolha'", "'caso'", "':'", "'exiba'", "'escreva'", "'{'", "'}'", "'leia'", 
+			"'^'", "'*'", "'/'", "'+'", "'-'", "'('", "')'", "'='", "'<='", "'=>'", 
+			"'<>'", "'<'", "'>'", "'nao'", "'e'", "'ou'", "'xou'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -51,7 +49,7 @@ public class EnquantoParser extends Parser {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, "BOOLEANO", "INT", "ID", "TEXTO", "Comentario", 
+			null, null, null, null, "BOOLEANO", "INT", "ID", "TEXTO", "Comentario", 
 			"Espaco"
 		};
 	}
@@ -176,7 +174,7 @@ public class EnquantoParser extends Parser {
 			setState(21);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__9) | (1L << T__11) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << ID))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__8) | (1L << T__10) | (1L << T__14) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << ID))) != 0)) {
 				{
 				{
 				setState(16);
@@ -454,7 +452,7 @@ public class EnquantoParser extends Parser {
 					setState(47);
 					booleano(0);
 					setState(48);
-					match(T__7);
+					match(T__5);
 					setState(49);
 					comando();
 					}
@@ -464,65 +462,65 @@ public class EnquantoParser extends Parser {
 					_la = _input.LA(1);
 				}
 				setState(56);
-				match(T__8);
+				match(T__7);
 				setState(57);
 				comando();
 				}
 				break;
-			case T__9:
+			case T__8:
 				_localctx = new EnquantoContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(59);
-				match(T__9);
+				match(T__8);
 				setState(60);
 				booleano(0);
 				setState(61);
-				match(T__10);
+				match(T__9);
 				setState(62);
 				comando();
 				}
 				break;
-			case T__11:
+			case T__10:
 				_localctx = new ParaContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(64);
-				match(T__11);
+				match(T__10);
 				setState(65);
 				match(ID);
 				setState(66);
-				match(T__12);
+				match(T__11);
 				setState(67);
 				expressao(0);
 				setState(68);
-				match(T__13);
+				match(T__12);
 				setState(69);
 				expressao(0);
 				setState(72);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__14) {
+				if (_la==T__13) {
 					{
 					setState(70);
-					match(T__14);
+					match(T__13);
 					setState(71);
 					expressao(0);
 					}
 				}
 
 				setState(74);
-				match(T__10);
+				match(T__9);
 				setState(75);
 				comando();
 				}
 				break;
-			case T__15:
+			case T__14:
 				_localctx = new EscolhaContext(_localctx);
 				enterOuterAlt(_localctx, 6);
 				{
 				setState(77);
-				match(T__15);
+				match(T__14);
 				setState(78);
 				expressao(0);
 				setState(86);
@@ -533,11 +531,11 @@ public class EnquantoParser extends Parser {
 						{
 						{
 						setState(79);
-						match(T__16);
+						match(T__15);
 						setState(80);
 						expressao(0);
 						setState(81);
-						match(T__17);
+						match(T__16);
 						setState(82);
 						comando();
 						}
@@ -549,36 +547,36 @@ public class EnquantoParser extends Parser {
 				}
 				}
 				break;
-			case T__18:
+			case T__17:
 				_localctx = new ExibaContext(_localctx);
 				enterOuterAlt(_localctx, 7);
 				{
 				setState(89);
-				match(T__18);
+				match(T__17);
 				setState(90);
 				match(TEXTO);
 				}
 				break;
-			case T__19:
+			case T__18:
 				_localctx = new EscrevaContext(_localctx);
 				enterOuterAlt(_localctx, 8);
 				{
 				setState(91);
-				match(T__19);
+				match(T__18);
 				setState(92);
 				expressao(0);
 				}
 				break;
-			case T__20:
+			case T__19:
 				_localctx = new BlocoContext(_localctx);
 				enterOuterAlt(_localctx, 9);
 				{
 				setState(93);
-				match(T__20);
+				match(T__19);
 				setState(94);
 				seqComando();
 				setState(95);
-				match(T__21);
+				match(T__20);
 				}
 				break;
 			default:
@@ -703,13 +701,13 @@ public class EnquantoParser extends Parser {
 				match(INT);
 				}
 				break;
-			case T__22:
+			case T__21:
 				{
 				_localctx = new LeiaContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(101);
-				match(T__22);
+				match(T__21);
 				}
 				break;
 			case ID:
@@ -721,17 +719,17 @@ public class EnquantoParser extends Parser {
 				match(ID);
 				}
 				break;
-			case T__28:
+			case T__27:
 				{
 				_localctx = new ExpParContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(103);
-				match(T__28);
+				match(T__27);
 				setState(104);
 				expressao(0);
 				setState(105);
-				match(T__29);
+				match(T__28);
 				}
 				break;
 			default:
@@ -756,7 +754,7 @@ public class EnquantoParser extends Parser {
 						setState(109);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
 						setState(110);
-						match(T__23);
+						match(T__22);
 						setState(111);
 						expressao(4);
 						}
@@ -769,7 +767,7 @@ public class EnquantoParser extends Parser {
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
 						setState(113);
 						_la = _input.LA(1);
-						if ( !(_la==T__24 || _la==T__25) ) {
+						if ( !(_la==T__23 || _la==T__24) ) {
 						_errHandler.recoverInline(this);
 						}
 						else {
@@ -789,7 +787,7 @@ public class EnquantoParser extends Parser {
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
 						setState(116);
 						_la = _input.LA(1);
-						if ( !(_la==T__26 || _la==T__27) ) {
+						if ( !(_la==T__25 || _la==T__26) ) {
 						_errHandler.recoverInline(this);
 						}
 						else {
@@ -977,7 +975,7 @@ public class EnquantoParser extends Parser {
 				setState(125);
 				expressao(0);
 				setState(126);
-				match(T__30);
+				match(T__29);
 				setState(127);
 				expressao(0);
 				}
@@ -990,7 +988,7 @@ public class EnquantoParser extends Parser {
 				setState(129);
 				expressao(0);
 				setState(130);
-				match(T__31);
+				match(T__30);
 				setState(131);
 				expressao(0);
 				}
@@ -1003,7 +1001,7 @@ public class EnquantoParser extends Parser {
 				setState(133);
 				expressao(0);
 				setState(134);
-				match(T__32);
+				match(T__31);
 				setState(135);
 				expressao(0);
 				}
@@ -1016,7 +1014,7 @@ public class EnquantoParser extends Parser {
 				setState(137);
 				expressao(0);
 				setState(138);
-				match(T__33);
+				match(T__32);
 				setState(139);
 				expressao(0);
 				}
@@ -1029,7 +1027,7 @@ public class EnquantoParser extends Parser {
 				setState(141);
 				expressao(0);
 				setState(142);
-				match(T__34);
+				match(T__33);
 				setState(143);
 				expressao(0);
 				}
@@ -1042,7 +1040,7 @@ public class EnquantoParser extends Parser {
 				setState(145);
 				expressao(0);
 				setState(146);
-				match(T__35);
+				match(T__34);
 				setState(147);
 				expressao(0);
 				}
@@ -1053,7 +1051,7 @@ public class EnquantoParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(149);
-				match(T__36);
+				match(T__35);
 				setState(150);
 				booleano(5);
 				}
@@ -1064,11 +1062,11 @@ public class EnquantoParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(151);
-				match(T__28);
+				match(T__27);
 				setState(152);
 				booleano(0);
 				setState(153);
-				match(T__29);
+				match(T__28);
 				}
 				break;
 			}
@@ -1091,7 +1089,7 @@ public class EnquantoParser extends Parser {
 						setState(157);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
 						setState(158);
-						match(T__37);
+						match(T__36);
 						setState(159);
 						booleano(5);
 						}
@@ -1103,7 +1101,7 @@ public class EnquantoParser extends Parser {
 						setState(160);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
 						setState(161);
-						match(T__38);
+						match(T__37);
 						setState(162);
 						booleano(4);
 						}
@@ -1115,7 +1113,7 @@ public class EnquantoParser extends Parser {
 						setState(163);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
 						setState(164);
-						match(T__39);
+						match(T__38);
 						setState(165);
 						booleano(3);
 						}
@@ -1228,15 +1226,15 @@ public class EnquantoParser extends Parser {
 			setState(179);
 			match(ID);
 			setState(180);
-			match(T__30);
+			match(T__29);
 			setState(181);
-			match(T__28);
+			match(T__27);
 			setState(182);
 			parametros();
 			setState(183);
-			match(T__29);
+			match(T__28);
 			setState(184);
-			match(T__32);
+			match(T__31);
 			setState(185);
 			expressao(0);
 			}
@@ -1285,63 +1283,63 @@ public class EnquantoParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\60\u00be\4\2\t\2"+
-		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\3\2\3\3\3\3\3\3\7"+
-		"\3\26\n\3\f\3\16\3\31\13\3\3\4\3\4\3\4\7\4\36\n\4\f\4\16\4!\13\4\3\4\3"+
-		"\4\3\4\3\4\7\4\'\n\4\f\4\16\4*\13\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3"+
-		"\4\3\4\7\4\66\n\4\f\4\16\49\13\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3"+
-		"\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4K\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3"+
-		"\4\3\4\7\4W\n\4\f\4\16\4Z\13\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4d\n"+
-		"\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5n\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
-		"\5\3\5\3\5\7\5y\n\5\f\5\16\5|\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
-		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3"+
-		"\6\3\6\3\6\3\6\3\6\3\6\5\6\u009e\n\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3"+
-		"\6\7\6\u00a9\n\6\f\6\16\6\u00ac\13\6\3\7\3\7\3\7\7\7\u00b1\n\7\f\7\16"+
-		"\7\u00b4\13\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\2\4\b\n\t\2\4\6\b\n"+
-		"\f\16\2\4\3\2\33\34\3\2\35\36\2\u00d6\2\20\3\2\2\2\4\27\3\2\2\2\6c\3\2"+
-		"\2\2\bm\3\2\2\2\n\u009d\3\2\2\2\f\u00ad\3\2\2\2\16\u00b5\3\2\2\2\20\21"+
-		"\5\4\3\2\21\3\3\2\2\2\22\23\5\6\4\2\23\24\7\3\2\2\24\26\3\2\2\2\25\22"+
-		"\3\2\2\2\26\31\3\2\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30\5\3\2\2\2\31\27"+
-		"\3\2\2\2\32\37\7-\2\2\33\34\7\4\2\2\34\36\7-\2\2\35\33\3\2\2\2\36!\3\2"+
-		"\2\2\37\35\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!\37\3\2\2\2\"#\7\5\2\2#(\5\b"+
-		"\5\2$%\7\4\2\2%\'\5\b\5\2&$\3\2\2\2\'*\3\2\2\2(&\3\2\2\2()\3\2\2\2)d\3"+
-		"\2\2\2*(\3\2\2\2+d\7\6\2\2,-\7\7\2\2-.\5\n\6\2./\7\b\2\2/\67\5\6\4\2\60"+
-		"\61\7\t\2\2\61\62\5\n\6\2\62\63\7\n\2\2\63\64\5\6\4\2\64\66\3\2\2\2\65"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3/\u00be\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\3\2\3\3\3\3\3\3\7\3"+
+		"\26\n\3\f\3\16\3\31\13\3\3\4\3\4\3\4\7\4\36\n\4\f\4\16\4!\13\4\3\4\3\4"+
+		"\3\4\3\4\7\4\'\n\4\f\4\16\4*\13\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
+		"\3\4\7\4\66\n\4\f\4\16\49\13\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
+		"\3\4\3\4\3\4\3\4\3\4\3\4\5\4K\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
+		"\3\4\7\4W\n\4\f\4\16\4Z\13\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4d\n\4"+
+		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5n\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5"+
+		"\3\5\3\5\7\5y\n\5\f\5\16\5|\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3"+
+		"\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
+		"\3\6\3\6\3\6\3\6\3\6\5\6\u009e\n\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
+		"\7\6\u00a9\n\6\f\6\16\6\u00ac\13\6\3\7\3\7\3\7\7\7\u00b1\n\7\f\7\16\7"+
+		"\u00b4\13\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\2\4\b\n\t\2\4\6\b\n\f"+
+		"\16\2\4\3\2\32\33\3\2\34\35\2\u00d6\2\20\3\2\2\2\4\27\3\2\2\2\6c\3\2\2"+
+		"\2\bm\3\2\2\2\n\u009d\3\2\2\2\f\u00ad\3\2\2\2\16\u00b5\3\2\2\2\20\21\5"+
+		"\4\3\2\21\3\3\2\2\2\22\23\5\6\4\2\23\24\7\3\2\2\24\26\3\2\2\2\25\22\3"+
+		"\2\2\2\26\31\3\2\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30\5\3\2\2\2\31\27\3"+
+		"\2\2\2\32\37\7,\2\2\33\34\7\4\2\2\34\36\7,\2\2\35\33\3\2\2\2\36!\3\2\2"+
+		"\2\37\35\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!\37\3\2\2\2\"#\7\5\2\2#(\5\b\5"+
+		"\2$%\7\4\2\2%\'\5\b\5\2&$\3\2\2\2\'*\3\2\2\2(&\3\2\2\2()\3\2\2\2)d\3\2"+
+		"\2\2*(\3\2\2\2+d\7\6\2\2,-\7\7\2\2-.\5\n\6\2./\7\b\2\2/\67\5\6\4\2\60"+
+		"\61\7\t\2\2\61\62\5\n\6\2\62\63\7\b\2\2\63\64\5\6\4\2\64\66\3\2\2\2\65"+
 		"\60\3\2\2\2\669\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28:\3\2\2\29\67\3\2\2"+
-		"\2:;\7\13\2\2;<\5\6\4\2<d\3\2\2\2=>\7\f\2\2>?\5\n\6\2?@\7\r\2\2@A\5\6"+
-		"\4\2Ad\3\2\2\2BC\7\16\2\2CD\7-\2\2DE\7\17\2\2EF\5\b\5\2FG\7\20\2\2GJ\5"+
-		"\b\5\2HI\7\21\2\2IK\5\b\5\2JH\3\2\2\2JK\3\2\2\2KL\3\2\2\2LM\7\r\2\2MN"+
-		"\5\6\4\2Nd\3\2\2\2OP\7\22\2\2PX\5\b\5\2QR\7\23\2\2RS\5\b\5\2ST\7\24\2"+
+		"\2:;\7\n\2\2;<\5\6\4\2<d\3\2\2\2=>\7\13\2\2>?\5\n\6\2?@\7\f\2\2@A\5\6"+
+		"\4\2Ad\3\2\2\2BC\7\r\2\2CD\7,\2\2DE\7\16\2\2EF\5\b\5\2FG\7\17\2\2GJ\5"+
+		"\b\5\2HI\7\20\2\2IK\5\b\5\2JH\3\2\2\2JK\3\2\2\2KL\3\2\2\2LM\7\f\2\2MN"+
+		"\5\6\4\2Nd\3\2\2\2OP\7\21\2\2PX\5\b\5\2QR\7\22\2\2RS\5\b\5\2ST\7\23\2"+
 		"\2TU\5\6\4\2UW\3\2\2\2VQ\3\2\2\2WZ\3\2\2\2XV\3\2\2\2XY\3\2\2\2Yd\3\2\2"+
-		"\2ZX\3\2\2\2[\\\7\25\2\2\\d\7.\2\2]^\7\26\2\2^d\5\b\5\2_`\7\27\2\2`a\5"+
-		"\4\3\2ab\7\30\2\2bd\3\2\2\2c\32\3\2\2\2c+\3\2\2\2c,\3\2\2\2c=\3\2\2\2"+
+		"\2ZX\3\2\2\2[\\\7\24\2\2\\d\7-\2\2]^\7\25\2\2^d\5\b\5\2_`\7\26\2\2`a\5"+
+		"\4\3\2ab\7\27\2\2bd\3\2\2\2c\32\3\2\2\2c+\3\2\2\2c,\3\2\2\2c=\3\2\2\2"+
 		"cB\3\2\2\2cO\3\2\2\2c[\3\2\2\2c]\3\2\2\2c_\3\2\2\2d\7\3\2\2\2ef\b\5\1"+
-		"\2fn\7,\2\2gn\7\31\2\2hn\7-\2\2ij\7\37\2\2jk\5\b\5\2kl\7 \2\2ln\3\2\2"+
-		"\2me\3\2\2\2mg\3\2\2\2mh\3\2\2\2mi\3\2\2\2nz\3\2\2\2op\f\6\2\2pq\7\32"+
+		"\2fn\7+\2\2gn\7\30\2\2hn\7,\2\2ij\7\36\2\2jk\5\b\5\2kl\7\37\2\2ln\3\2"+
+		"\2\2me\3\2\2\2mg\3\2\2\2mh\3\2\2\2mi\3\2\2\2nz\3\2\2\2op\f\6\2\2pq\7\31"+
 		"\2\2qy\5\b\5\6rs\f\5\2\2st\t\2\2\2ty\5\b\5\6uv\f\4\2\2vw\t\3\2\2wy\5\b"+
 		"\5\5xo\3\2\2\2xr\3\2\2\2xu\3\2\2\2y|\3\2\2\2zx\3\2\2\2z{\3\2\2\2{\t\3"+
-		"\2\2\2|z\3\2\2\2}~\b\6\1\2~\u009e\7+\2\2\177\u0080\5\b\5\2\u0080\u0081"+
-		"\7!\2\2\u0081\u0082\5\b\5\2\u0082\u009e\3\2\2\2\u0083\u0084\5\b\5\2\u0084"+
-		"\u0085\7\"\2\2\u0085\u0086\5\b\5\2\u0086\u009e\3\2\2\2\u0087\u0088\5\b"+
-		"\5\2\u0088\u0089\7#\2\2\u0089\u008a\5\b\5\2\u008a\u009e\3\2\2\2\u008b"+
-		"\u008c\5\b\5\2\u008c\u008d\7$\2\2\u008d\u008e\5\b\5\2\u008e\u009e\3\2"+
-		"\2\2\u008f\u0090\5\b\5\2\u0090\u0091\7%\2\2\u0091\u0092\5\b\5\2\u0092"+
-		"\u009e\3\2\2\2\u0093\u0094\5\b\5\2\u0094\u0095\7&\2\2\u0095\u0096\5\b"+
-		"\5\2\u0096\u009e\3\2\2\2\u0097\u0098\7\'\2\2\u0098\u009e\5\n\6\7\u0099"+
-		"\u009a\7\37\2\2\u009a\u009b\5\n\6\2\u009b\u009c\7 \2\2\u009c\u009e\3\2"+
-		"\2\2\u009d}\3\2\2\2\u009d\177\3\2\2\2\u009d\u0083\3\2\2\2\u009d\u0087"+
+		"\2\2\2|z\3\2\2\2}~\b\6\1\2~\u009e\7*\2\2\177\u0080\5\b\5\2\u0080\u0081"+
+		"\7 \2\2\u0081\u0082\5\b\5\2\u0082\u009e\3\2\2\2\u0083\u0084\5\b\5\2\u0084"+
+		"\u0085\7!\2\2\u0085\u0086\5\b\5\2\u0086\u009e\3\2\2\2\u0087\u0088\5\b"+
+		"\5\2\u0088\u0089\7\"\2\2\u0089\u008a\5\b\5\2\u008a\u009e\3\2\2\2\u008b"+
+		"\u008c\5\b\5\2\u008c\u008d\7#\2\2\u008d\u008e\5\b\5\2\u008e\u009e\3\2"+
+		"\2\2\u008f\u0090\5\b\5\2\u0090\u0091\7$\2\2\u0091\u0092\5\b\5\2\u0092"+
+		"\u009e\3\2\2\2\u0093\u0094\5\b\5\2\u0094\u0095\7%\2\2\u0095\u0096\5\b"+
+		"\5\2\u0096\u009e\3\2\2\2\u0097\u0098\7&\2\2\u0098\u009e\5\n\6\7\u0099"+
+		"\u009a\7\36\2\2\u009a\u009b\5\n\6\2\u009b\u009c\7\37\2\2\u009c\u009e\3"+
+		"\2\2\2\u009d}\3\2\2\2\u009d\177\3\2\2\2\u009d\u0083\3\2\2\2\u009d\u0087"+
 		"\3\2\2\2\u009d\u008b\3\2\2\2\u009d\u008f\3\2\2\2\u009d\u0093\3\2\2\2\u009d"+
 		"\u0097\3\2\2\2\u009d\u0099\3\2\2\2\u009e\u00aa\3\2\2\2\u009f\u00a0\f\6"+
-		"\2\2\u00a0\u00a1\7(\2\2\u00a1\u00a9\5\n\6\7\u00a2\u00a3\f\5\2\2\u00a3"+
-		"\u00a4\7)\2\2\u00a4\u00a9\5\n\6\6\u00a5\u00a6\f\4\2\2\u00a6\u00a7\7*\2"+
+		"\2\2\u00a0\u00a1\7\'\2\2\u00a1\u00a9\5\n\6\7\u00a2\u00a3\f\5\2\2\u00a3"+
+		"\u00a4\7(\2\2\u00a4\u00a9\5\n\6\6\u00a5\u00a6\f\4\2\2\u00a6\u00a7\7)\2"+
 		"\2\u00a7\u00a9\5\n\6\5\u00a8\u009f\3\2\2\2\u00a8\u00a2\3\2\2\2\u00a8\u00a5"+
 		"\3\2\2\2\u00a9\u00ac\3\2\2\2\u00aa\u00a8\3\2\2\2\u00aa\u00ab\3\2\2\2\u00ab"+
-		"\13\3\2\2\2\u00ac\u00aa\3\2\2\2\u00ad\u00b2\7-\2\2\u00ae\u00af\7\4\2\2"+
-		"\u00af\u00b1\7-\2\2\u00b0\u00ae\3\2\2\2\u00b1\u00b4\3\2\2\2\u00b2\u00b0"+
+		"\13\3\2\2\2\u00ac\u00aa\3\2\2\2\u00ad\u00b2\7,\2\2\u00ae\u00af\7\4\2\2"+
+		"\u00af\u00b1\7,\2\2\u00b0\u00ae\3\2\2\2\u00b1\u00b4\3\2\2\2\u00b2\u00b0"+
 		"\3\2\2\2\u00b2\u00b3\3\2\2\2\u00b3\r\3\2\2\2\u00b4\u00b2\3\2\2\2\u00b5"+
-		"\u00b6\7-\2\2\u00b6\u00b7\7!\2\2\u00b7\u00b8\7\37\2\2\u00b8\u00b9\5\f"+
-		"\7\2\u00b9\u00ba\7 \2\2\u00ba\u00bb\7#\2\2\u00bb\u00bc\5\b\5\2\u00bc\17"+
-		"\3\2\2\2\20\27\37(\67JXcmxz\u009d\u00a8\u00aa\u00b2";
+		"\u00b6\7,\2\2\u00b6\u00b7\7 \2\2\u00b7\u00b8\7\36\2\2\u00b8\u00b9\5\f"+
+		"\7\2\u00b9\u00ba\7\37\2\2\u00ba\u00bb\7\"\2\2\u00bb\u00bc\5\b\5\2\u00bc"+
+		"\17\3\2\2\2\20\27\37(\67JXcmxz\u009d\u00a8\u00aa\u00b2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

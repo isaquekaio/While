@@ -37,11 +37,19 @@ interface Linguagem {
 	class Se implements Comando {
 		private final Bool condicao;
 		private final Comando entao;
+		// Novo
+		private final Bool senaose;
+		private final Comando entao_senaose;
+
 		private final Comando senao;
 
-		public Se(Bool condicao, Comando entao, Comando senao) {
+		public Se(Bool condicao, Comando entao, Bool senaose, Comando entao_senaose, Comando senao) {
 			this.condicao = condicao;
 			this.entao = entao;
+			// Novo
+			this.senaose = senaose;
+			this.entao_senaose = entao_senaose;
+			
 			this.senao = senao;
 		}
 

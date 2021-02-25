@@ -6,7 +6,7 @@ seqComando: (comando ';')*;
 
 comando: ID (',' ID)* ':=' expressao (',' expressao)*                                               # atribuicao
        | 'skip'                                                                                     # skip
-       | 'se' booleano 'entao' comando ('senaose' booleano 'então' comando)* 'senao' comando        # se //(alterado)
+       | 'se' booleano 'entao' comando ('senaose' booleano 'entao' comando)* 'senao' comando        # se //(alterado)
        | 'enquanto' booleano 'faca' comando                                                         # enquanto
        | 'para' ID 'de' expressao 'ate' expressao ('passo' expressao)? 'faca' comando               # para //(inserido)
        | 'escolha' expressao ('caso' expressao ':' comando)*                                        # escolha //(inserido)
