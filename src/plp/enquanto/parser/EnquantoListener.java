@@ -1,4 +1,4 @@
-// Generated from .\src\plp\enquanto\parser\Enquanto.g4 by ANTLR 4.9.1
+// Generated from ./src/plp/enquanto/parser/Enquanto.g4 by ANTLR 4.9.1
 package plp.enquanto.parser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -75,6 +75,30 @@ public interface EnquantoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEnquanto(EnquantoParser.EnquantoContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code para}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void enterPara(EnquantoParser.ParaContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code para}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void exitPara(EnquantoParser.ParaContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code escolha}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void enterEscolha(EnquantoParser.EscolhaContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code escolha}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void exitEscolha(EnquantoParser.EscolhaContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exiba}
 	 * labeled alternative in {@link EnquantoParser#comando}.
@@ -231,4 +255,24 @@ public interface EnquantoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBoolPar(EnquantoParser.BoolParContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EnquantoParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void enterParametros(EnquantoParser.ParametrosContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EnquantoParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void exitParametros(EnquantoParser.ParametrosContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EnquantoParser#funcao}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncao(EnquantoParser.FuncaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EnquantoParser#funcao}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncao(EnquantoParser.FuncaoContext ctx);
 }

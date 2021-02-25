@@ -18,6 +18,7 @@ comando: ID (',' ID)* ':=' expressao (',' expressao)*                           
 expressao: INT                                           # inteiro
          | 'leia'                                        # leia
          | ID                                            # id
+         | <assoc=right> expressao '^' expressao         # opBin
          | expressao ('*' | '/') expressao               # opBin
          | expressao ('+' | '-') expressao               # opBin
          | '(' expressao ')'                             # expPar

@@ -220,6 +220,30 @@ interface Linguagem {
 		}
 	}
 
+	//Comando novo
+	class ExpDiv extends OpBin<Expressao> implements Expressao{
+		ExpDiv(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public int getValor() {
+			return esq.getValor() / dir.getValor();
+		}
+	}
+
+	//Comando novo
+	class ExpExpo extends OpBin<Expressao> implements Expressao{
+		ExpDiv(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public int getValor() {
+			return Math.pow(esq.getValor(),  dir.getValor());
+		}
+	}
+
 	class Booleano implements Bool {
 		private final boolean valor;
 
@@ -252,6 +276,54 @@ interface Linguagem {
 		@Override
 		public boolean getValor() {
 			return esq.getValor() <= dir.getValor();
+		}
+	}
+
+	//Novo 
+	class ExpMaiorIgual extends OpBin<Expressao> implements Bool{
+		ExpMaiorIgual(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() => dir.getValor();
+		}
+	}
+
+	// Novo
+	class ExpDiferente extends OpBin<Expressao> implements Bool{
+		ExpDiferente(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() != dir.getValor();
+		}
+	}
+
+	// Novo
+	class ExpMenor extends OpBin<Expressao> implements Bool{
+		ExpMenor(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() < dir.getValor();
+		}
+	}
+
+	// Novo
+	class ExpMaior extends OpBin<Expressao> implements Bool{
+		ExpMaior(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() > dir.getValor();
 		}
 	}
 

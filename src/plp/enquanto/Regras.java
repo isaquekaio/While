@@ -38,7 +38,7 @@ public class Regras extends EnquantoBaseListener {
 
 	@Override
 	public void exitSe(SeContext ctx) {
-		final Bool condicao = valores.pegue(ctx.booleano());
+		final Bool condicao = valores.pegue(ctx.booleano(0));
 		final Comando entao = valores.pegue(ctx.comando(0));
 		final Comando senao = valores.pegue(ctx.comando(1));
 		valores.insira(ctx, new Se(condicao, entao, senao));
@@ -84,8 +84,8 @@ public class Regras extends EnquantoBaseListener {
 
 	@Override
 	public void exitAtribuicao(AtribuicaoContext ctx) {
-		final String id = ctx.ID().getText();
-		final Expressao exp = valores.pegue(ctx.expressao());
+		final String id = ctx.ID(0).getText();
+		final Expressao exp = valores.pegue(ctx.expressao(0));
 		valores.insira(ctx, new Atribuicao(id, exp));
 	}
 
@@ -100,10 +100,15 @@ public class Regras extends EnquantoBaseListener {
 		final Expressao esq = valores.pegue(ctx.expressao(0));
 		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
-		final Expressao exp = switch (op) {
-			case "*" -> new ExpMult(esq, dir);
-			case "-" -> new ExpSub(esq, dir);
-			default  -> new ExpSoma(esq, dir);
+		final Expressao exp; 
+		
+		switch (op) {
+			case "^" : exp = new ExpExpo(esq, dir); break;	//ok
+			case "*" : exp = new ExpMult(esq, dir); break;
+			case "/" : exp = new ExpDiv(esq, dir); break;	//ok
+			case "-" : exp = new ExpSub(esq, dir); break;
+			case "+" : exp = new ExpSoma(esq, dir); break;
+			default  : exp = new ExpSoma(esq, dir); break;
 		};
 		valores.insira(ctx, exp);
 	}
@@ -152,10 +157,16 @@ public class Regras extends EnquantoBaseListener {
 		final Expressao esq = valores.pegue(ctx.expressao(0));
 		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
-		final Bool exp = switch (op) {
-			case "="  -> new ExpIgual(esq, dir);
-			case "<=" -> new ExpMenorIgual(esq, dir);
-			default   -> new ExpIgual(esq, esq);
+		final Bool exp;
+		switch (op) {
+			case "="  : exp = new ExpIgual(esq, dir); break;
+			case "<=" : exp = new ExpMenorIgual(esq, dir); break;
+			// Novos
+			case "=>" : exp = new ExpMaiorIgual(esq, dir); break; 	//ok
+			case "<>" : exp = new ExpDiferente(esq, dir); break;	//ok
+			case "<"  : exp = new ExpMenor(esq, dir); break;		//ok
+			case ">"  : exp = new ExpMaior(esq, dir); break;		//ok
+			default   : exp = new ExpIgual(esq, esq); break;
 		};
 		valores.insira(ctx, exp);
 	}
