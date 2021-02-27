@@ -39,7 +39,6 @@ interface Linguagem {
 		private final Comando entao;
 		private final List<Bool> senaose; 	// Novo
 		private final List<Comando> comando; 	// Novo
-
 		private final Comando senao;
 
 		public Se(Bool condicao, Comando entao, List<Bool> senaose, List<Comando> comando, Comando senao) {
@@ -63,6 +62,30 @@ interface Linguagem {
 				entao.execute();
 			}else{
 				senao.execute();
+			}
+		}
+	}
+
+	// Novo
+	class Escolha implements Comando {
+		private final Expressao expressao;
+		private final List<Expressao> casos;
+		private final List<Comando> comandos;
+
+		public Escolha(Expressao expressao, List<Expressao> casos, List<Comando> comandos) {
+			this.expressao = expressao;
+			this.casos = casos;
+			this.comandos = comandos;
+		}
+
+		@Override
+		public void execute() {
+			for (int i=0; i < casos.size(); i++){
+				for(int j=0; j < comandos.size(); j++){
+					if (casos.get(i).getValor() == expressao.getValor() && i == j){
+						comandos.get(j).execute();	
+					}
+				}
 			}
 		}
 	}

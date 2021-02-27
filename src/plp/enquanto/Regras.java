@@ -46,6 +46,15 @@ public class Regras extends EnquantoBaseListener {
 		valores.insira(ctx, new Se(condicao, entao, senaose, comando, senao));
 	}
 
+	// Novo - 'escolha' expressao ('caso' expressao ':' comando)*
+	@Override 
+	public void exitEscolha(EscolhaContext ctx) { 
+		final Expressao expressao = valores.pegue(ctx.expressao(0));
+		final List<Expressao> casos = valores.pegue(ctx.expressao(1));
+		final List<Comando> comandos = valores.pegue(ctx.comando(1));
+		valores.insira(ctx, new Escolha(expressao, casos, comandos));
+	}
+
 	@Override
 	public void exitInteiro(InteiroContext ctx) {
 		valores.insira(ctx, new Inteiro(parseInt(ctx.getText())));
