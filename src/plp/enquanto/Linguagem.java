@@ -98,6 +98,33 @@ interface Linguagem {
 		}
 	}
 
+	// Novo 'para' ID 'de' expressao 'ate' expressao ('passo' expressao)? 'faca' comando
+	class Para implements Comando {
+		private final String id;
+		private final Expressao de;
+		private final Expressao ate;
+		private final Expressao passo;
+		private final Comando faca;
+
+		public Para(String id, Expressao de, Expressao ate, Expressao passo, Comando faca) {
+			this.id = id;
+			this.de = de;
+			this.ate = ate;
+			this.passo = null == passo ? new Inteiro(1) : passo;
+			this.faca = faca;
+		}
+
+		@Override
+		public void execute() {
+			int de = this.de.getValor();
+			int ate = this.ate.getValor();
+			int passo = this.passo.getValor();
+			for (int i = de; i < ate; i += passo ) {
+				faca.execute();
+			}
+		}
+	}
+
 	class Exiba implements Comando {
 		private final String texto;
 

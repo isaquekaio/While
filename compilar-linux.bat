@@ -4,3 +4,4 @@ cp ./lib/antlr-runtime-4.9.1.jar while.jar
 jar --update --file ./while.jar --main-class plp.enquanto.Principal -C bin plp
 
 //Fluxo de trabalho: Enquanto.g4 -> Linguagem.java -> Regras.java 
+//java -jar while.jar olamundo.while 
