@@ -37,28 +37,33 @@ interface Linguagem {
 	class Se implements Comando {
 		private final Bool condicao;
 		private final Comando entao;
-		// Novo
-		private final Bool senaose;
-		private final Comando entao_senaose;
+		private final List<Bool> senaose; 	// Novo
+		private final List<Comando> comando; 	// Novo
 
 		private final Comando senao;
 
-		public Se(Bool condicao, Comando entao, Bool senaose, Comando entao_senaose, Comando senao) {
+		public Se(Bool condicao, Comando entao, List<Bool> senaose, List<Comando> comando, Comando senao) {
 			this.condicao = condicao;
 			this.entao = entao;
-			// Novo
-			this.senaose = senaose;
-			this.entao_senaose = entao_senaose;
-			
+			this.senaose = senaose; 		// Novo
+			this.comando = comando;			// Novo
 			this.senao = senao;
 		}
 
 		@Override
 		public void execute() {
-			if (condicao.getValor())
+	
+			if (condicao.getValor()){
+				if (!senaose.isEmpty()){
+					for (int i=0; i < senaose.size(); i++){
+						comando.get(i).execute();
+						break;
+					}
+				}
 				entao.execute();
-			else
+			}else{
 				senao.execute();
+			}
 		}
 	}
 
